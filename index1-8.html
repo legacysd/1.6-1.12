@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переменные и типы данных 1-8</title>
+</head>
+
+<body>
+
+    <script>
+
+        const surname = "Карамзин",
+            name = "Виктор",
+            patronymic = "Геннадьевич",
+            ocupation = "Преподаватель специальных дисциплин",
+            degree = "Высшее",
+            category = "Первая",
+            education = "Московский государственный институт электронной техники(технический университет)",
+            discipline = "Информатика",
+            note = "Неизвестный преподаватель";
+
+        write(1, `${surname} ${name} ${patronymic}`);
+        write(2, `${ocupation}`, `Должность:`);
+        write(2, `${degree}`, `Уровень образования:`);
+        write(2, `${category}`, `Категория:`);
+        write(2, `${education}`, `Образование:`);
+        write(2, `${discipline}`, `Преподоваемая дисциплина:`);
+        write(2, `${note}`, `Примечание:`);
+
+        function write(type, content, prev) {
+
+            let output = `<div class="content">`;
+
+            switch (type) {
+                case 1:
+                    output += `<h2>${content}</h2>`;
+                    break;
+                case 2:
+                    output += `<i>${prev}</i> ${content}`;
+                    break;
+                default:
+                    output = content;
+                    break;
+            }
+            output += "</div>";
+
+            document.write(output + "<br>");
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

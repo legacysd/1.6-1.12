@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переменные и типы данных 1-9</title>
+</head>
+
+<body>
+
+    <script>
+
+        const arr = [
+            {
+                content: `Карамзин Виктор Геннадьевич`,
+                type: 1
+            },
+            {
+                prev: `Должность:`,
+                content: `Преподаватель специальных дисциплин`,
+                type: 2
+            },
+            {
+                prev: `Уровень образования:`,
+                content: `Высшее`,
+                type: 2
+            },
+            {
+                prev: `Категория:`,
+                content: `Первая`,
+                type: 2
+            },
+            {
+                prev: `Образование:`,
+                content: `Московский государственный институт электронной техники(технический университет)`,
+                type: 2
+            },
+            {
+                prev: `Преподоваемая дисциплина:`,
+                content: `Информатика`,
+                type: 2
+            },
+            {
+                prev: `Примечание:`,
+                content: `Неизвестный преподаватель`,
+                type: 2
+            },
+        ]
+
+        arr.forEach((obj) => {
+            write(obj.type, obj.content, obj.prev);
+        })
+
+
+        function write(type, content, prev) {
+
+            let output = `<div class="content">`;
+
+            switch (type) {
+                case 1:
+                    output += `<h2>${content}</h2>`;
+                    break;
+                case 2:
+                    output += `<i>${prev}</i> ${content}`;
+                    break;
+                default:
+                    output = content;
+                    break;
+            }
+            output += "</div>";
+
+            document.write(output + "<br>");
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
